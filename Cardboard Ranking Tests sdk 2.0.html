@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editable Board Example</title>
+
+    <script type="text/javascript" src="/apps/2.0/sdk.js"></script>
+
+    <script type="text/javascript">
+        Rally.onReady(function() {
+            Ext.define('Rally.example.EditableBoard', {
+                extend: 'Rally.app.App',
+            
+                launch: function() {
+                    this.add({
+                        xtype: 'rallycardboard',
+                        types: ['User Story'],
+                        attribute: 'ScheduleState',
+                        context: this.getContext(),
+                        enableRanking: false,
+                        cardConfig: {
+                            editable: true,
+                            showIconsAndHighlightBorder: true,
+                            showReadyIcon: true,
+                            showBlockedIcon: true,
+                            showColorIcon: true,
+                            showPlusIcon: true,
+                            showGearIcon: true
+                        }
+                    });
+                }
+            });
+            
+
+            Rally.launchApp('Rally.example.EditableBoard', {
+              name: 'Editable Board Example'
+            });
+        });
+    </script>
+
+    <style type="text/css">
+        
+    </style>
+</head>
+<body></body>
+</html>
